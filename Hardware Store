@@ -1,0 +1,27 @@
+/** Hardware Store **/
+CREATE TABLE store (id INTEGER PRIMARY KEY, item_name TEXT, price INTEGER, quantity INTEGER);
+
+INSERT INTO store VALUES (1, "hammers", 8, 10);
+INSERT INTO store VALUES (2, "nails", 1, 100);
+INSERT INTO store VALUES (3, "tape measures", 5, 20);
+INSERT INTO store VALUES (4, "phillips screwdrivers", 5, 20);
+INSERT INTO store VALUES (5, "flat screwdrivers", 5, 19);
+INSERT INTO store VALUES (6, "screws", 1, 200);
+INSERT INTO store VALUES (7, "hand saws", 10, 3);
+INSERT INTO store VALUES (8, "crow bars", 10, 4);
+INSERT INTO store VALUES (9, "wrenches", 9, 10);
+INSERT INTO store VALUES (10, "sockets", 3, 20);
+INSERT INTO store VALUES (11, "electrical tape", 2, 15);
+INSERT INTO store VALUES (12, "buckets", 5, 10);
+INSERT INTO store VALUES (13, "flashlights", 12,18);
+INSERT INTO store VALUES (14, "paintbrushes", 8, 5);
+INSERT INTO store VALUES (15, "bolts", 1, 150);
+
+/** Inventory Sorted by Price Low to High **/
+SELECT * FROM store ORDER BY price asc;
+
+/** Total Inventory **/
+SELECT SUM(quantity) FROM store;
+
+/** Items to Restock **/
+SELECT * FROM store WHERE quantity <10;
